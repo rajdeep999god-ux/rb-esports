@@ -2,63 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RB ESPORTS | Home</title>
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'baby-blue': '#e0f2fe',
-                        'sky-blue': '#38bdf8',
-                        'deep-blue': '#0369a1'
-                    },
-                    fontFamily: {
-                        'script': ['"Dancing Script"', 'cursive'],
-                        'body': ['"Poppins"', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0369a1">
+    
     <style>
-        body { font-family: 'Poppins', sans-serif; overflow-x: hidden; }
-        .hero-pattern { background: radial-gradient(circle at top, #e0f2fe, #f0f9ff 60%); position: relative; overflow: hidden; }
-        .hero-pattern::before, .hero-pattern::after {
-            content: ""; position: absolute; width: 300px; height: 300px; border-radius: 50%;
-            background: radial-gradient(circle, rgba(56, 189, 248, .25), transparent 70%);
-            filter: blur(60px); animation: blob 18s ease-in-out infinite alternate; z-index: 0;
+        /* সব ডিভাইসের জন্য অটো-ফিট */
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            margin: 0; padding: 0; 
+            overflow-x: hidden; 
+            padding-bottom: 80px; /* মোবাইলে নিচের মেনুর জন্য জায়গা */
         }
-        @media (min-width: 768px) { .hero-pattern::before, .hero-pattern::after { width: 420px; height: 420px; } }
-        .hero-pattern::after { right: -150px; top: 50%; animation-duration: 22s; }
-        .hero-pattern::before { left: -150px; top: 10%; }
-        @keyframes blob { from { transform: translateY(0); } to { transform: translateY(-120px); } }
         
-        .reveal { opacity: 0; transform: translateY(30px) scale(.98); transition: 1s; }
-        .reveal.active { opacity: 1; transform: none; }
+        /* Mobile Bottom Nav */
+        .bottom-nav {
+            position: fixed; bottom: 0; left: 0; right: 0;
+            height: 70px; background: #ffffff;
+            display: flex; justify-content: space-around; align-items: center;
+            border-top: 1px solid #ddd; z-index: 9999;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        }
+
+        /* ডেস্কটপে নিচের মেনু লুকিয়ে রাখা */
+        @media (min-width: 768px) {
+            .bottom-nav { display: none; }
+            body { padding-bottom: 0; }
+        }
+
+        .nav-link { text-align: center; color: #666; text-decoration: none; font-size: 12px; flex: 1; }
+        .nav-link i { font-size: 20px; display: block; margin-bottom: 2px; }
+        .nav-link.active { color: #38bdf8; font-weight: bold; }
         
-        .glow-text { animation: glow 3s ease-in-out infinite alternate; }
-        @keyframes glow { from { text-shadow: 0 0 10px #7dd3fc; } to { text-shadow: 0 0 25px #38bdf8; } }
-        
-        .hero-btn { transition: .3s; }
-        .hero-btn:hover { transform: scale(1.05); box-shadow: 0 10px 25px rgba(0,0,0,.2); }
-        
-        .feature-card { backdrop-filter: blur(14px); background: rgba(255, 255, 255, .85); transition: .4s; }
-        .feature-card:hover { transform: translateY(-8px); shadow: 0 20px 40px rgba(0,0,0,0.1); }
-        
-        #progress { position: fixed; top: 0; left: 0; height: 4px; background: #38bdf8; z-index: 1000; transition: width 0.2s; }
-        
-        .testimonial { display: none; }
-        .testimonial.active { display: block; animation: fade 1s; }
-        @keyframes fade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+        /* ইমেজ অটো রিসাইজ */
+        img { max-width: 100%; height: auto; }
     </style>
 </head>
+
 
 <body class="bg-baby-blue text-gray-700">
 
