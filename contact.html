@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Join | RB ESPORTS</title>
+<title>Contact | RB ESPORTS</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -45,9 +45,12 @@ from{ text-shadow:0 0 10px #7dd3fc }
 to{ text-shadow:0 0 30px #38bdf8 }
 }
 
-.glow-btn:active{
-box-shadow:0 0 25px #38bdf8;
-transform:scale(1.05);
+.contact-card{
+transition:.4s;
+}
+.contact-card:hover{
+transform:translateY(-10px) scale(1.05);
+box-shadow:0 20px 40px rgba(0,0,0,.25);
 }
 
 .balloon{position: fixed;bottom: -120px;width: 55px;height: 75px;border-radius: 50%;opacity: 0.5;animation: floatUp linear infinite;z-index: 1;}
@@ -85,122 +88,87 @@ transform:scale(1.05);
 <!-- NAV -->
 <nav class="bg-white/90 backdrop-blur-md shadow-md fixed w-full z-50 top-0">
 <div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
-<div class="flex items-center gap-2 cursor-pointer" onclick="location.href='new.html'">
+
+<div class="flex items-center gap-2 cursor-pointer" onclick="location.href='index.html'">
 <i class="fas fa-gamepad text-sky-blue text-3xl"></i>
 <span class="font-script text-3xl font-bold text-deep-blue">RB ESPORTS</span>
 </div>
 
 <div class="space-x-6 hidden md:block">
-<a href="new.html">
+<a href="index.html" class="hover:text-sky-blue">
 <i class="fas fa-house mr-1"></i> Home
 </a>
 
-<a href="products.html">
+<a href="modes.html" class="hover:text-sky-blue">
 <i class="fas fa-gamepad mr-1"></i> Modes
 </a>
 
-<a href="collection.html">
-<i class="fas fa-trophy mr-1"></i> Tournaments
+<a href="joined.html" class="hover:text-sky-blue">
+<i class="fas fa-trophy mr-1"></i> Joined
 </a>
 
-<a href="about.html">
-<i class="fas fa-user mr-1"></i> About
+<a href="result.html" class="hover:text-sky-blue">
+<i class="fas fa-chart-line mr-1"></i> Results
 </a>
-
-
 
 <a href="contact.html" class="text-sky-blue font-bold">
-<i class="fas fa-envelope mr-1"></i> Join
+<i class="fas fa-envelope mr-1"></i> Contact
 </a>
 
-<a href="profile.html">
+<a href="profile.html" class="hover:text-sky-blue">
 <i class="fas fa-user-circle mr-1"></i> Profile
 </a>
-
 </div>
 </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero-pattern pt-32 pb-16 text-center relative z-10">
-<h1 class="font-script text-6xl text-deep-blue mb-2 glow">Join Tournament 🎮</h1>
-<p class="text-gray-500">Register and enter the battlefield 🔥</p>
+<h1 class="font-script text-6xl text-deep-blue mb-2 glow">Connect With Us 🚀</h1>
+<p class="text-gray-500">Join our community & stay updated 🔥</p>
 </section>
 
-<!-- PROFILE -->
-<section class="pb-20 relative z-10">
-<div class="max-w-4xl mx-auto px-4">
-
-<div class="bg-white rounded-3xl shadow-xl p-10 text-center">
-
-<img src="images/me.jpeg"
-class="w-32 h-32 mx-auto rounded-full object-cover border-4 border-blue-200 shadow-md mb-4">
-
-<h2 class="text-3xl font-bold text-deep-blue">Rajdeep Bhanja</h2>
-<p class="text-gray-500 mb-4">Tournament Organizer • Gamer</p>
-
-<p class="max-w-2xl mx-auto text-gray-600 mb-6">
-I organize gaming tournaments and create competitive environments for players.
-Join now and prove your skills in the arena!
-</p>
-
-<div class="flex flex-wrap justify-center gap-3 mb-8">
-<span class="px-4 py-1 rounded-full bg-blue-100 text-sky-blue text-sm">ESPORTS</span>
-<span class="px-4 py-1 rounded-full bg-blue-100 text-sky-blue text-sm">TOURNAMENT</span>
-<span class="px-4 py-1 rounded-full bg-blue-100 text-sky-blue text-sm">GAMING</span>
-</div>
-
-</div>
-</div>
-</section>
-
-<!-- FORM -->
+<!-- CONTACT CARDS -->
 <section class="pb-24 relative z-10">
-<div class="max-w-3xl mx-auto bg-white rounded-3xl shadow-xl p-10 text-center">
-<h2 class="font-script text-4xl text-deep-blue mb-2 glow">Register Now 🎯</h2>
+<div class="max-w-6xl mx-auto px-4">
 
-<div class="grid md:grid-cols-2 gap-4 mb-4">
-<input type="text" placeholder="Player Name" class="input">
-<input type="text" placeholder="Game ID / Username" class="input">
+<div class="grid md:grid-cols-3 gap-8">
+
+<!-- TELEGRAM -->
+<div class="contact-card bg-white p-8 rounded-3xl shadow text-center">
+<i class="fab fa-telegram text-5xl text-sky-blue mb-4"></i>
+<h3 class="text-xl font-bold mb-2">Telegram</h3>
+<p class="text-gray-500 mb-4">Join our official channel</p>
+<p class="text-deep-blue font-semibold">@rb_arena_4971</p>
+<a href="https://t.me/rb_arena_4971" target="_blank">
+<button class="mt-4 bg-sky-blue text-white px-6 py-2 rounded-full">Join Now</button>
+</a>
 </div>
 
-<input type="text" placeholder="Team Name (optional)" class="input w-full mb-4">
-
-<div class="grid md:grid-cols-2 gap-4 mb-4">
-<input type="text" placeholder="Game Name" class="input">
-<input type="text" placeholder="Mobile Number" class="input">
+<!-- INSTAGRAM -->
+<div class="contact-card bg-white p-8 rounded-3xl shadow text-center">
+<i class="fab fa-instagram text-5xl text-pink-500 mb-4"></i>
+<h3 class="text-xl font-bold mb-2">Instagram</h3>
+<p class="text-gray-500 mb-4">Follow for updates</p>
+<p class="text-deep-blue font-semibold">@rb_arena_4971</p>
+<a href="https://instagram.com/rb_arena_4971" target="_blank">
+<button class="mt-4 bg-sky-blue text-white px-6 py-2 rounded-full">Follow</button>
+</a>
 </div>
 
-<textarea rows="4" placeholder="Any Message / Requirements" class="input w-full mb-6"></textarea>
-
-<button class="bg-sky-blue text-white px-10 py-3 rounded-full shadow-lg hover:scale-105 transition glow-btn">
-🚀 Register
-</button>
+<!-- FACEBOOK -->
+<div class="contact-card bg-white p-8 rounded-3xl shadow text-center">
+<i class="fab fa-facebook text-5xl text-blue-600 mb-4"></i>
+<h3 class="text-xl font-bold mb-2">Facebook</h3>
+<p class="text-gray-500 mb-4">Visit our page</p>
+<p class="text-deep-blue font-semibold">RB ESPORTS</p>
+<a href="https://www.facebook.com/share/16SkbgF9Jh/" target="_blank">
+<button class="mt-4 bg-sky-blue text-white px-6 py-2 rounded-full">Visit</button>
+</a>
 </div>
-</section>
 
-<!-- INFO -->
-<section class="pb-20 text-center">
-<h2 class="font-script text-4xl text-deep-blue mb-6 glow">Why Join? 🏆</h2>
-<div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-gray-600 max-w-4xl mx-auto">
-<div>🔥 Competitive Matches</div>
-<div>🏆 Prize Rewards</div>
-<div>🎮 Pro Experience</div>
-<div>👥 Team Battles</div>
 </div>
-</section>
 
-<!-- LOCATION -->
-<section class="pb-24">
-<div class="max-w-5xl mx-auto bg-white rounded-3xl shadow-xl p-10 text-center">
-<h2 class="font-script text-4xl text-deep-blue mb-6 glow">Location 📍</h2>
-<p class="mb-4 text-gray-600">
-Kolkata, India
-</p>
-
-<iframe class="w-full h-72 rounded-2xl shadow"
-src="https://maps.google.com/maps?q=Kolkata&t=&z=13&ie=UTF8&iwloc=&output=embed">
-</iframe>
 </div>
 </section>
 
