@@ -3,169 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#0369a1">
-    
-    <style>
-        /* সব ডিভাইসের জন্য অটো-ফিট */
-        body { 
-            font-family: 'Poppins', sans-serif; 
-            margin: 0; padding: 0; 
-            overflow-x: hidden; 
-            padding-bottom: 80px; /* মোবাইলে নিচের মেনুর জন্য জায়গা */
+    <title>RB ESPORTS | Home</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { 'baby-blue': '#e0f2fe', 'sky-blue': '#38bdf8', 'deep-blue': '#0369a1' },
+                    fontFamily: { 'script': ['"Dancing Script"', 'cursive'], 'body': ['"Poppins"', 'sans-serif'] }
+                }
+            }
         }
+    </script>
+
+    <style>
+        /* মোবাইল এবং ডেস্কটপ লেআউট কন্ট্রোল */
+        body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; overflow-x: hidden; }
         
-        /* Mobile Bottom Nav */
+        /* নিচের মেনু বার শুধু মোবাইলে দেখাবে */
         .bottom-nav {
             position: fixed; bottom: 0; left: 0; right: 0;
             height: 70px; background: #ffffff;
             display: flex; justify-content: space-around; align-items: center;
-            border-top: 1px solid #ddd; z-index: 9999;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            border-top: 1px solid #e2e8f0; z-index: 9999;
+            box-shadow: 0 -2px 15px rgba(0,0,0,0.1);
         }
 
-        /* ডেস্কটপে নিচের মেনু লুকিয়ে রাখা */
+        /* বড় স্ক্রিনে (ডেস্কটপে) নিচের বারটি লুকিয়ে ফেলবে */
         @media (min-width: 768px) {
             .bottom-nav { display: none; }
-            body { padding-bottom: 0; }
+            .mobile-only-padding { padding-bottom: 0px; }
+        }
+        @media (max-width: 767px) {
+            .mobile-only-padding { padding-bottom: 80px; }
         }
 
-        .nav-link { text-align: center; color: #666; text-decoration: none; font-size: 12px; flex: 1; }
-        .nav-link i { font-size: 20px; display: block; margin-bottom: 2px; }
+        .nav-link { text-align: center; color: #64748b; text-decoration: none; font-size: 11px; flex: 1; transition: 0.3s; }
+        .nav-link i { font-size: 22px; display: block; margin-bottom: 2px; }
         .nav-link.active { color: #38bdf8; font-weight: bold; }
-        
-        /* ইমেজ অটো রিসাইজ */
-        img { max-width: 100%; height: auto; }
     </style>
 </head>
 
+<body class="bg-baby-blue mobile-only-padding">
 
-<body class="bg-baby-blue text-gray-700">
+<div class="md:hidden bg-white/90 backdrop-blur-md p-4 fixed top-0 w-full z-50 flex justify-center shadow-sm">
+    <span class="font-script text-2xl font-bold text-deep-blue">RB ESPORTS</span>
+</div>
 
-<div id="progress"></div>
-
-<nav class="bg-white/80 backdrop-blur-md shadow-md fixed top-0 w-full z-50">
-    <div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
-        <div class="flex items-center gap-2 cursor-pointer" onclick="location.href='index.html'">
-            <i class="fas fa-gamepad text-sky-blue text-2xl md:text-3xl"></i>
-            <span class="font-script text-2xl md:text-3xl font-bold text-deep-blue">RB ESPORTS</span>
-        </div>
-        <div class="space-x-4 lg:space-x-6 hidden md:block">
-            <a href="index.html" class="text-sky-blue font-bold text-sm lg:text-base"><i class="fas fa-house mr-1"></i> Home</a>
-            <a href="products.html" class="hover:text-sky-blue text-sm lg:text-base"><i class="fas fa-gamepad mr-1"></i> Modes</a>
-            <a href="collection.html" class="hover:text-sky-blue text-sm lg:text-base"><i class="fas fa-trophy mr-1"></i> Tournaments</a>
-            <a href="about.html" class="hover:text-sky-blue text-sm lg:text-base"><i class="fas fa-user mr-1"></i> About</a>
-            <a href="contact.html" class="hover:text-sky-blue text-sm lg:text-base"><i class="fas fa-envelope mr-1"></i> Join</a>
+<nav class="hidden md:block bg-white shadow-md p-4 fixed top-0 w-full z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <span class="font-script text-3xl font-bold text-deep-blue">RB ESPORTS</span>
+        <div class="space-x-6 font-semibold">
+            <a href="index.html" class="text-sky-blue">Home</a>
+            <a href="products.html">Modes</a>
+            <a href="collection.html">Matches</a>
+            <a href="contact.html">Join</a>
+            <a href="profile.html">Profile</a>
         </div>
     </div>
 </nav>
 
-<section class="hero-pattern min-h-screen flex items-center pt-20">
-    <div class="max-w-6xl mx-auto text-center px-6 relative z-10 reveal active">
-        <h1 class="font-script text-5xl sm:text-7xl md:text-9xl text-deep-blue mb-6 glow-text">RB ESPORTS</h1>
-        <p class="text-lg md:text-xl text-sky-blue mb-3">Enter the battlefield 🎮🔥</p>
-        <p class="text-gray-600 max-w-xl mx-auto mb-10 text-sm md:text-base">Join epic tournaments, compete with top players, and prove your skills on the global stage.</p>
-        <div class="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="#featured" class="bg-sky-blue text-white px-8 py-3 rounded-full font-semibold shadow-lg hero-btn text-center">Explore Modes 🎯</a>
-            <a href="collection.html" class="bg-white border-2 border-sky-blue text-sky-blue px-8 py-3 rounded-full font-semibold shadow-lg hero-btn text-center">Tournaments 🏆</a>
-            <a href="contact.html" class="bg-deep-blue text-white px-8 py-3 rounded-full font-semibold shadow-lg hero-btn animate-pulse text-center">Join Now 🚀</a>
+<section class="min-h-screen flex items-center justify-center text-center px-6 pt-20">
+    <div>
+        <h1 class="font-script text-5xl md:text-9xl text-deep-blue mb-4">RB ESPORTS</h1>
+        <p class="text-lg text-sky-blue mb-8">Enter the Battlefield 🎮🔥</p>
+        <div class="flex flex-col gap-4">
+             <a href="products.html" class="bg-sky-blue text-white px-8 py-3 rounded-full shadow-lg font-bold">Explore Modes</a>
         </div>
     </div>
 </section>
 
-<section class="py-20 px-4 reveal text-center">
-    <h2 class="font-script text-4xl md:text-5xl text-deep-blue mb-10">Our Gaming Journey 🎮</h2>
-    <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <div class="p-8 rounded-2xl shadow-sm feature-card border border-white">🔥 Built for gamers</div>
-        <div class="p-8 rounded-2xl shadow-sm feature-card border border-white">⚔️ Competitive battles</div>
-        <div class="p-8 rounded-2xl shadow-sm feature-card border border-white">🏆 Rewarding victories</div>
-    </div>
-</section>
-
-<section class="py-16 bg-white/70 reveal">
-    <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center px-4">
-        <div><div class="counter" data-target="15000">0</div><p class="text-sm md:text-base text-gray-500 uppercase tracking-widest">Players</p></div>
-        <div><div class="counter" data-target="800">0</div><p class="text-sm md:text-base text-gray-500 uppercase tracking-widest">Matches</p></div>
-        <div><div class="counter" data-target="50">0</div><p class="text-sm md:text-base text-gray-500 uppercase tracking-widest">Tournaments</p></div>
-        <div><div class="counter" data-target="20">0</div><p class="text-sm md:text-base text-gray-500 uppercase tracking-widest">Games</p></div>
-    </div>
-</section>
-
-<section id="featured" class="py-20 reveal bg-white/50">
-    <h2 class="font-script text-4xl md:text-5xl text-center text-deep-blue mb-12">Featured Modes 🎮</h2>
-    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-6">
-        <div class="bg-white p-4 rounded-2xl shadow-md text-center hover:shadow-xl transition">
-            <div class="bg-sky-100 h-40 rounded-xl mb-4 flex items-center justify-center text-sky-400 italic">BR Image</div>
-            <p class="font-bold">Battle Royale</p>
-        </div>
-        <div class="bg-white p-4 rounded-2xl shadow-md text-center hover:shadow-xl transition">
-            <div class="bg-sky-100 h-40 rounded-xl mb-4 flex items-center justify-center text-sky-400 italic">TDM Image</div>
-            <p class="font-bold">Team Deathmatch</p>
-        </div>
-        <div class="bg-white p-4 rounded-2xl shadow-md text-center hover:shadow-xl transition">
-            <div class="bg-sky-100 h-40 rounded-xl mb-4 flex items-center justify-center text-sky-400 italic">1v1 Image</div>
-            <p class="font-bold">1v1 Clash</p>
-        </div>
-        <div class="bg-white p-4 rounded-2xl shadow-md text-center hover:shadow-xl transition">
-            <div class="bg-sky-100 h-40 rounded-xl mb-4 flex items-center justify-center text-sky-400 italic">Sniper Image</div>
-            <p class="font-bold">Sniper Mode</p>
-        </div>
-    </div>
-    <div class="text-center mt-12">
-        <a href="products.html" class="bg-sky-blue text-white px-10 py-3 rounded-full shadow-lg hero-btn inline-block">View All Modes 🎯</a>
-    </div>
-</section>
-
-<section class="py-20 hero-pattern reveal text-center px-4">
-    <h2 class="font-script text-5xl md:text-6xl text-deep-blue mb-4">Mega Tournament 🎯</h2>
-    <p class="mb-8 text-gray-600">Win exciting prizes and gain ultimate glory in the gaming arena.</p>
-    <a href="collection.html" class="bg-sky-blue text-white px-12 py-4 rounded-full shadow-xl hero-btn font-bold inline-block">Register Now</a>
-</section>
-
-<button onclick="window.scrollTo({top:0,behavior:'smooth'})" 
-class="fixed bottom-5 right-5 bg-sky-blue text-white w-12 h-12 rounded-full shadow-2xl hero-btn z-50 flex items-center justify-center">
-    <i class="fas fa-arrow-up"></i>
-</button>
-
-<script>
-    // Reveal animations on scroll
-    const reveals = document.querySelectorAll(".reveal");
-    const counters = document.querySelectorAll(".counter");
-    
-    const handleScroll = () => {
-        let sc = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-        document.getElementById("progress").style.width = sc + "%";
-
-        reveals.forEach(r => {
-            if (r.getBoundingClientRect().top < window.innerHeight - 50) {
-                r.classList.add("active");
-            }
-        });
-
-        counters.forEach(counter => {
-            if (counter.getBoundingClientRect().top < window.innerHeight) {
-                let target = +counter.dataset.target;
-                if (counter.innerText == "0") {
-                    let count = 0;
-                    let speed = target / 50;
-                    let update = () => {
-                        count += speed;
-                        if (count < target) {
-                            counter.innerText = Math.ceil(count);
-                            setTimeout(update, 30);
-                        } else {
-                            counter.innerText = target + "+";
-                        }
-                    }
-                    update();
-                }
-            }
-        });
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    window.addEventListener("load", handleScroll); // Check on load
-</script>
+<div class="bottom-nav">
+    <a href="index.html" class="nav-link active">
+        <i class="fas fa-home"></i><span>Home</span>
+    </a>
+    <a href="products.html" class="nav-link">
+        <i class="fas fa-gamepad"></i><span>Modes</span>
+    </a>
+    <a href="collection.html" class="nav-link">
+        <i class="fas fa-trophy"></i><span>Matches</span>
+    </a>
+    <a href="contact.html" class="nav-link">
+        <i class="fas fa-users"></i><span>Join</span>
+    </a>
+    <a href="profile.html" class="nav-link">
+        <i class="fas fa-user-circle"></i><span>Profile</span>
+    </a>
+</div>
 
 </body>
 </html>
